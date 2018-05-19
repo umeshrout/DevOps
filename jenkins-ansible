@@ -1,0 +1,9 @@
+FROM ansible/centos7-ansible
+
+USER root
+
+RUN yum -y install java
+RUN yum -y install wget
+RUN wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+RUN rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+RUN yum -y install jenkins
