@@ -1,0 +1,17 @@
+---
+service_user: tomcat
+service_group: devops
+image: tomcat
+remote_port: 8080
+state: started
+
+tomcat_details:
+ Server1:
+  exp_port: 9080
+  hostname: tomcat-1
+ Server2:
+  exp_port: 10080
+  hostname: tomcat-2
+ Server3:
+  exp_port: 20080
+  hostname: tomcat-3

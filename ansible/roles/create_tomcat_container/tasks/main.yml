@@ -1,0 +1,17 @@
+---
+- name: Create a data container
+  docker_container:
+    name: "{{ item.value.hostname }}"
+    image: "{{ image }}"
+    published_ports: "{{ item.value.exp_port }}:{{ remote_port }}"
+    hostname: "{{ item.value.hostname }}"
+    state: "{{ state }}"
+  with_dict: "{{ tomcat_details }}"
+
+- debug:
+    msg: "{{ item.key }} and {{ item.value.name }} and {{ item.value.telephone }}"
+  with_dict: "{{ users }}"
+
+- debug:
+    msg: "{{ item.key }} and {{ item.value.name }} and {{ item.value.telephone }}"
+  with_dict: "{{ userss }}"

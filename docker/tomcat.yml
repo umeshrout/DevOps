@@ -1,0 +1,6 @@
+tomcat:
+  image: tomcat:latest
+  ports:
+    - "80:8080"
+  volumes:
+    - /Users/umeshrout/.m2/repository/com/rout/webapp/RoutWebApp1/1.0/RoutWebApp1-1.0.war:/usr/local/tomcat/webapps/supplements.war
